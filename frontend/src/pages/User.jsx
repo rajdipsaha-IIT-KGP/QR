@@ -100,7 +100,13 @@ const User = () => {
           <b>ID:</b> {user["Sr.No"]}
         </p>
         <p style={styles.info}>
+          <b>Breakfast:</b> {user["Breakfast"]}
+        </p>
+        <p style={styles.info}>
           <b>Lunch:</b> {user["Lunch"]}
+        </p>
+        <p style={styles.info}>
+          <b>Dinner:</b> {user["Dinner"]}
         </p>
       </div>
 
