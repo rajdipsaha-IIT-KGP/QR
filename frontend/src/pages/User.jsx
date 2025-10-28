@@ -111,13 +111,19 @@ const User = () => {
       </div>
 
       <style>
-        {`
-          @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-          }
-        `}
-      </style>
+{`
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 400px) {
+    h1 { font-size: 1.5rem !important; }
+    p { font-size: 0.9rem !important; }
+  }
+`}
+</style>
+
     </div>
   );
 };
@@ -133,27 +139,32 @@ const styles = {
     alignItems: "center",
     flexDirection: "column",
     textAlign: "center",
+    padding: "20px", // prevents edge clipping on small screens
+    boxSizing: "border-box",
   },
 
   card: {
     backgroundColor: "#1e1e1e",
-    padding: "30px 40px",
+    padding: "20px",
     borderRadius: "16px",
     boxShadow: "0 4px 20px rgba(0,0,0,0.6)",
     color: "#fff",
     animation: "fadeIn 0.8s ease-out",
-    maxWidth: "350px",
     width: "100%",
+    maxWidth: "350px",
+    boxSizing: "border-box",
   },
 
   name: {
     marginBottom: "15px",
-    fontSize: "2rem",
+    fontSize: "1.8rem",
     color: "#00e0ff",
+    wordBreak: "break-word", // ensures long names wrap instead of overflowing
   },
 
   info: {
     margin: "8px 0",
+    wordWrap: "break-word",
   },
 
   spinner: {
@@ -174,11 +185,15 @@ const styles = {
 
   errorCard: {
     backgroundColor: "#1e1e1e",
-    padding: "30px 40px",
+    padding: "20px",
     borderRadius: "16px",
     boxShadow: "0 4px 20px rgba(255,0,0,0.4)",
     animation: "fadeIn 0.8s ease-out",
+    width: "100%",
+    maxWidth: "350px",
+    boxSizing: "border-box",
   },
 };
+
 
 export default User;
